@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <h1>Hello World</h1>
-    <h2>Welcome to Employee Payroll App</h2>
+    <AddEmpMain />
   </div>
 </template>
 
 <script>
+import AddEmpMain from "./components/AddEmpMain.vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    AddEmpMain,
+  },
 };
 </script>
 
