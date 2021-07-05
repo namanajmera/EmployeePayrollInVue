@@ -246,10 +246,12 @@
       </div>
 
       <div class="button-parent">
-        <a
-          href="/pages/employee_payroll_home.html"
-          class="resetButton button cancelButton"
-          >Cancel</a
+        <router-link to="/home"
+          ><a
+            href="/pages/employee_payroll_home.html"
+            class="resetButton button cancelButton"
+            >Cancel</a
+          ></router-link
         >
         <div class="sumbit-reset">
           <button type="submit" class="button sumbitButton">Submit</button>
@@ -293,10 +295,11 @@ export default {
       };
       event.preventDefault();
       console.log(data);
-      HTTP.post("/employee_payroll", data)
+      HTTP.post("/employees_payroll", data)
         .then((result) => {
           console.log("data added successfully.");
           console.log(result);
+          this.$router.push({ name: "MainEmp" });
         })
         .catch((err) => {
           console.log(err);
@@ -440,7 +443,9 @@ select {
 .sumbitButton {
   margin-right: 30px;
 }
-
+a {
+  text-decoration: none;
+}
 .cancelButton {
   padding-top: 8px;
   text-decoration: none;

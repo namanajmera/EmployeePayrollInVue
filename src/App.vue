@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <AddEmpMain />
+    <router-view />
   </div>
 </template>
 
 <script>
-import AddEmpMain from "./components/AddEmpMain.vue";
 export default {
   name: "App",
-  components: {
-    AddEmpMain,
-  },
+  components: {},
 };
 </script>
 
