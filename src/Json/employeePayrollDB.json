@@ -1,19 +1,6 @@
 {
   "employees_payroll": [
     {
-      "name": "adasdasd",
-      "profilePicture": "../assets/profile-images/Ellipse -3.png",
-      "gender": "Male",
-      "departments": [
-        "Sales",
-        "Finance"
-      ],
-      "salary": "438700",
-      "startDate": "2021-10-20",
-      "note": "dasdasd",
-      "id": 1
-    },
-    {
       "name": "Naman Ajmera",
       "gender": "Male",
       "salary": "500000",
@@ -28,10 +15,11 @@
     {
       "name": "Elon Musk",
       "gender": "Male",
-      "salary": "448000",
-      "note": "sadasdsad",
-      "startDate": "2016-09-11",
+      "salary": "348700",
+      "note": "sdasdasd",
+      "startDate": "2021-01-01",
       "departments": [
+        "Sales",
         "Engineer"
       ],
       "id": 3

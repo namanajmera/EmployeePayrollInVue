@@ -30,6 +30,7 @@
             src="../assets/design-icons/delete_black_24dp.svg"
             alt="delete"
             class="actions"
+            @click="remove(empData.id)"
           />
           <img
             :id="empData.id"
@@ -84,6 +85,17 @@ export default {
           },
         },
       });
+    },
+    remove(id) {
+      console.log(id);
+      HTTP.delete("/employees_payroll/" + id)
+        .then((result) => {
+          console.log(result);
+          this.getEmployeeData();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
