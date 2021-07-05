@@ -1,6 +1,6 @@
 <template>
   <div class="form-content">
-    <form class="form" action="#" @submit="submit">
+    <form class="form" action="">
       <div class="form-head">Employee Payroll Form</div>
       <div class="row-content">
         <label class="label text" for="name">Name</label>
@@ -254,7 +254,21 @@
           ></router-link
         >
         <div class="sumbit-reset">
-          <button type="submit" class="button sumbitButton">Submit</button>
+          <button
+            class="button sumbitButton"
+            @click="update"
+            v-if="this.data != undefined && this.data.type == 'update'"
+          >
+            Update
+          </button>
+          <button
+            type="submit"
+            class="button sumbitButton"
+            @click="submit"
+            v-else
+          >
+            Submit
+          </button>
           <button type="reset" class="resetButton button">Reset</button>
         </div>
       </div>
@@ -265,6 +279,24 @@
 import { HTTP } from "../Service/AxiosService.js";
 export default {
   name: "AddEmployeeForm",
+  props: ["data"],
+  mounted() {
+    if (this.data != undefined && this.data.type == "update") {
+      let date = this.setDate(this.data.result.startDate);
+      console.log(date);
+      console.log("Put ", this.data);
+      this.form.name = this.data.result.name;
+      this.form.profilePicture = this.data.result.profilePicture;
+      this.form.gender = this.data.result.gender;
+      this.form.departments = this.data.result.departments;
+      this.form.salary = this.data.result.salary;
+      this.form.startDate.date = date[2];
+      this.form.startDate.month = date[1];
+      this.form.startDate.year = date[0];
+      this.form.note = this.data.result.note;
+      console.log(this.form);
+    }
+  },
   data() {
     return {
       form: {
@@ -274,8 +306,8 @@ export default {
         departments: [],
         salary: "400000",
         startDate: {
-          month: "Jan",
-          date: "2",
+          month: "01",
+          date: "01",
           year: "2021",
         },
         note: "",
@@ -284,13 +316,20 @@ export default {
   },
   methods: {
     submit(event) {
+      let date =
+        this.form.startDate.year +
+        "-" +
+        this.form.startDate.month +
+        "-" +
+        this.form.startDate.date;
+      console.log(date, typeof date);
       const data = {
         name: this.form.name,
         profilePicture: this.form.profilePicture,
         gender: this.form.gender,
         departments: this.form.departments,
         salary: this.form.salary,
-        startDate: this.form.startDate,
+        startDate: date,
         note: this.form.note,
       };
       event.preventDefault();
@@ -304,6 +343,36 @@ export default {
         .catch((err) => {
           console.log(err);
           console.log("error after data add.");
+        });
+    },
+    setDate(date) {
+      return date.split("-");
+    },
+    update() {
+      let date =
+        this.form.startDate.year +
+        "-" +
+        this.form.startDate.month +
+        "-" +
+        this.form.startDate.date;
+      console.log(date, typeof date);
+      const data = {
+        name: this.form.name,
+        profilePic: this.form.profilePicture,
+        gender: this.form.gender,
+        salary: this.form.salary,
+        note: this.form.note,
+        startDate: date,
+        departments: this.form.departments,
+      };
+      console.log(data);
+      HTTP.put("/employees_payroll/" + this.data.result.id, data)
+        .then((data) => {
+          console.log("Update Successfully", data);
+          this.$router.push({ name: "MainEmp" });
+        })
+        .catch((err) => {
+          console.log(err);
         });
     },
   },

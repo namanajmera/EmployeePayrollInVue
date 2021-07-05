@@ -1,106 +1,40 @@
 {
   "employees_payroll": [
     {
-      "name": "Fake Identity",
+      "name": "adasdasd",
       "profilePicture": "../assets/profile-images/Ellipse -3.png",
       "gender": "Male",
       "departments": [
         "Sales",
-        "Finance",
-        "Engineer"
+        "Finance"
       ],
-      "salary": "464200",
-      "startDate": {
-        "month": "01",
-        "date": "01",
-        "year": "2021"
-      },
-      "note": "sadasd",
+      "salary": "438700",
+      "startDate": "2021-10-20",
+      "note": "dasdasd",
       "id": 1
     },
     {
       "name": "Naman Ajmera",
-      "profilePicture": "../assets/profile-images/Ellipse -3.png",
       "gender": "Male",
+      "salary": "500000",
+      "note": "jhgfdsa",
+      "startDate": "2021-04-01",
       "departments": [
-        "Engineer",
-        "Finance"
+        "HR",
+        "Engineer"
       ],
-      "salary": "471500",
-      "startDate": {
-        "month": "02",
-        "date": "02",
-        "year": "2021"
-      },
-      "note": "Home",
       "id": 2
     },
     {
       "name": "Elon Musk",
-      "profilePicture": "../assets/profile-images/Ellipse -3.png",
       "gender": "Male",
+      "salary": "448000",
+      "note": "sadasdsad",
+      "startDate": "2016-09-11",
       "departments": [
-        "Sales",
-        "Finance"
-      ],
-      "salary": "450400",
-      "startDate": {
-        "month": "11",
-        "date": "28",
-        "year": "2021"
-      },
-      "note": "dfdsfdsf",
-      "id": 3
-    },
-    {
-      "name": "Hello There",
-      "profilePicture": "../assets/profile-images/Ellipse -1.png",
-      "gender": "Female",
-      "departments": [
-        "Finance"
-      ],
-      "salary": "400000",
-      "startDate": {
-        "month": "10",
-        "date": "28",
-        "year": "2021"
-      },
-      "note": "sddsadsad",
-      "id": 4
-    },
-    {
-      "name": "sdasdsad",
-      "profilePicture": "../assets/profile-images/Ellipse -1.png",
-      "gender": "Female",
-      "departments": [
-        "Sales",
-        "Finance",
         "Engineer"
       ],
-      "salary": "442100",
-      "startDate": {
-        "month": "09",
-        "date": "17",
-        "year": "2021"
-      },
-      "note": "dasdasd",
-      "id": 5
-    },
-    {
-      "name": "asdsadsd",
-      "profilePicture": "../assets/profile-images/Ellipse -3.png",
-      "gender": "Male",
-      "departments": [
-        "Sales"
-      ],
-      "salary": "418100",
-      "startDate": {
-        "month": "10",
-        "date": "17",
-        "year": "2021"
-      },
-      "note": "dsadsadd",
-      "id": 6
+      "id": 3
     }
   ]
 }

@@ -36,6 +36,7 @@
             src="../assets/design-icons/edit_black_24dp.svg"
             alt="edit"
             class="actions"
+            @click="update(empData)"
           />
         </td>
       </tr>
@@ -71,6 +72,18 @@ export default {
         ? "undefined"
         : new Date(Date.parse(date)).toLocaleDateString("en-GB", options);
       return newDate;
+    },
+    update(data) {
+      console.log(data);
+      this.$router.push({
+        name: "AddEmpMain",
+        params: {
+          data: {
+            result: data,
+            type: "update",
+          },
+        },
+      });
     },
   },
 };

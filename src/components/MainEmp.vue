@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="bg">
     <EmployeeHeader />
     <EmployeeActions />
     <EmployeeData />
@@ -19,4 +19,7 @@ export default {
 };
 </script>
 <style>
+#bg {
+  background-color: rgb(240, 235, 235);
+}
 </style>
