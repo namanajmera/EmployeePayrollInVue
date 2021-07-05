@@ -1,19 +1,19 @@
 {
   "employee_payroll": {
-    "name": "Naman Ajmera",
-    "profilePicture": "../assets/profile-images/Ellipse -3.png",
+    "name": "Elon Musk",
+    "profilePicture": "../assets/profile-images/Ellipse -2.png",
     "gender": "Male",
     "departments": [
       "Sales",
       "Finance",
       "Engineer"
     ],
-    "salary": "500000",
+    "salary": "473500",
     "startDate": {
-      "month": "01",
-      "date": "02",
+      "month": "02",
+      "date": "01",
       "year": "2021"
     },
-    "note": "Home Sweet Home"
+    "note": "Home"
   }
 }

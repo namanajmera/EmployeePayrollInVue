@@ -295,10 +295,12 @@ export default {
       console.log(data);
       HTTP.post("/employee_payroll", data)
         .then((result) => {
+          console.log("data added successfully.");
           console.log(result);
         })
         .catch((err) => {
           console.log(err);
+          console.log("error after data add.");
         });
     },
   },
