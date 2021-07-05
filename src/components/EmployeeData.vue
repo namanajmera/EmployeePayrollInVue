@@ -10,10 +10,10 @@
         <th>Start Date</th>
         <th>Actions</th>
       </tr>
-      <tr v-for="empData in EmployeeData" :key="empData.id">
+      <tr v-for="empData in EmployeeData" :key="empData.empId">
         <!-- <img src="../assets/profile-images/Ellipse -3.png" alt="profilePicture" /> -->
         <td>
-          <img :src="empData.profilePicture" alt="profilePicture" />
+          <img :src="empData.profilePic" alt="profilePicture" />
         </td>
         <td>{{ empData.name }}</td>
         <td>{{ empData.gender }}</td>
@@ -26,14 +26,14 @@
         <td id="date">{{ stringifyDate(empData.startDate) }}</td>
         <td>
           <img
-            :id="empData.id"
+            :id="empData.empId"
             src="../assets/design-icons/delete_black_24dp.svg"
             alt="delete"
             class="actions"
-            @click="remove(empData.id)"
+            @click="remove(empData.empId)"
           />
           <img
-            :id="empData.id"
+            :id="empData.empId"
             src="../assets/design-icons/edit_black_24dp.svg"
             alt="edit"
             class="actions"
@@ -58,9 +58,9 @@ export default {
   },
   methods: {
     getEmployeeData() {
-      HTTP.get("/employees_payroll")
+      HTTP.get("/employeepayroll")
         .then((result) => {
-          this.EmployeeData = result.data;
+          this.EmployeeData = result.data.data;
           console.log("Successfully Get", this.EmployeeData);
         })
         .catch((err) => {
@@ -88,7 +88,7 @@ export default {
     },
     remove(id) {
       console.log(id);
-      HTTP.delete("/employees_payroll/" + id)
+      HTTP.delete("/employeepayroll/delete/" + id)
         .then((result) => {
           console.log(result);
           this.getEmployeeData();

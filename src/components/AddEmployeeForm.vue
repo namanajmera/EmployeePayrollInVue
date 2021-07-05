@@ -24,7 +24,7 @@
               id="profile1"
               name="profile"
               value="../assets/profile-images/Ellipse 1.png"
-              v-model="form.profilePicture"
+              v-model="form.profilePic"
               required
             />
             <img
@@ -39,7 +39,7 @@
               id="profile2"
               name="profile"
               value="../assets/profile-images/Ellipse -2.png"
-              v-model="form.profilePicture"
+              v-model="form.profilePic"
               required
             />
             <img
@@ -54,7 +54,7 @@
               id="profile3"
               name="profile"
               value="../assets/profile-images/Ellipse -1.png"
-              v-model="form.profilePicture"
+              v-model="form.profilePic"
               required
             />
             <img
@@ -69,7 +69,7 @@
               id="profile4"
               name="profile"
               value="../assets/profile-images/Ellipse -3.png"
-              v-model="form.profilePicture"
+              v-model="form.profilePic"
               required
             />
             <img
@@ -286,7 +286,7 @@ export default {
       console.log(date);
       console.log("Put ", this.data);
       this.form.name = this.data.result.name;
-      this.form.profilePicture = this.data.result.profilePicture;
+      this.form.profilePic = this.data.result.profilePic;
       this.form.gender = this.data.result.gender;
       this.form.departments = this.data.result.departments;
       this.form.salary = this.data.result.salary;
@@ -325,7 +325,7 @@ export default {
       console.log(date, typeof date);
       const data = {
         name: this.form.name,
-        profilePicture: this.form.profilePicture,
+        profilePic: this.form.profilePic,
         gender: this.form.gender,
         departments: this.form.departments,
         salary: this.form.salary,
@@ -334,7 +334,7 @@ export default {
       };
       event.preventDefault();
       console.log(data);
-      HTTP.post("/employees_payroll", data)
+      HTTP.post("/employeepayroll/post/create", data)
         .then((result) => {
           console.log("data added successfully.");
           console.log(result);
@@ -366,7 +366,7 @@ export default {
         departments: this.form.departments,
       };
       console.log(data);
-      HTTP.put("/employees_payroll/" + this.data.result.id, data)
+      HTTP.put("/employeepayroll/put/update/" + this.data.result.id, data)
         .then((data) => {
           console.log("Update Successfully", data);
           this.$router.push({ name: "MainEmp" });
